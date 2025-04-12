@@ -4,3 +4,15 @@
   padding: 2rem;
   text-align: center;
 }
+
+nav {
+  position: fixed; 
+  top: 0; 
+  right: 0; 
+}
+
+.home-link 
+{
+  border:1px dotted white;
+  width:75px;
+}
