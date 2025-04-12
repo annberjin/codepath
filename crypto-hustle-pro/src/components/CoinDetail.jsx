@@ -44,6 +44,39 @@ function CoinDetail() {
           This coin was built with the algorithm{" "}
           {fullDetails.textData[params.symbol].Algorithm}{" "}
         </div>
+
+        <table>
+          <tbody> 
+            <tr>
+              <th>Monetary Symbol </th>
+              <td>{fullDetails.numbers[params.symbol].USD.FROMSYMBOL}</td>
+            </tr>
+            <tr>
+              <th>Volume </th>
+              <td>{fullDetails.numbers[params.symbol].USD.VOLUME24HOURTO}</td>
+            </tr>
+            <tr>
+              <th>Today's Open Price </th>
+              <td>{fullDetails.numbers[params.symbol].USD.OPENDAY}</td>
+            </tr>
+            <tr>
+              <th>Highest Price during the Day </th>
+              <td>{fullDetails.numbers[params.symbol].USD.HIGHDAY}</td>
+            </tr>
+            <tr>
+              <th>Lowest Price during the Day </th>
+              <td>{fullDetails.numbers[params.symbol].USD.LOWDAY}</td>
+            </tr>
+            <tr>
+              <th>Change from Previous Day </th>
+              <td>{fullDetails.numbers[params.symbol].USD.CHANGE24HOUR} ({fullDetails.numbers[params.symbol].USD.CHANGEPCT24HOUR}%)</td>
+            </tr>
+            <tr>
+              <th>Market Cap </th>
+              <td>{fullDetails.numbers[params.symbol].USD.CIRCULATINGSUPPLYMKTCAP}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       ) : null
     }
