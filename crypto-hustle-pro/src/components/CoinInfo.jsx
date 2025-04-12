@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
 import "./CoinInfo.css";
 
 const API_KEY = "25d93648fea555cbd8c974a9c643e1280f96475ecbc5f74582a45fc264dd0e9f";
@@ -21,10 +22,13 @@ function CoinInfo({image, name, symbol}) {
       {price && (
         <div className="main-list" key={symbol}>
           <img className="icons" src={`https://www.cryptocompare.com${image}`} alt={`Small icon for ${name} crypto coin`}/>
-          {`${name} (${symbol})`}
-          <span className="tab">
-            ${price.USD} USD
-          </span>
+          <Link
+            style={{ color: "Black" }}
+            to={`/coinDetails/${symbol}`}
+            key={symbol}
+          >
+            {name} ({symbol}) <span className="tab"></span>${price.USD} USD
+          </Link>
         </div>
       )}
     </div>
