@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react'
 import CoinInfo from "./components/CoinInfo";
 import './App.css'
 
-const API_KEY = "25d93648fea555cbd8c974a9c643e1280f96475ecbc5f74582a45fc264dd0e9f";
-// import.meta.env.VITE_APP_API_KEY;
+const API_KEY = import.meta.env.VITE_APP_API_KEY;;
 
 function App() {
   const [coinList, setCoinList] = useState([])
