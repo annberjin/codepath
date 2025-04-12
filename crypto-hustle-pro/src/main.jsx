@@ -4,6 +4,8 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import './index.css';
 import App from './App.jsx';
 import Layout from '../routes/Layout';
+import DetailView from '../routes/DetailView.jsx';
+import CoinDetail from './components/CoinDetail.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -11,6 +13,7 @@ createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index={true} element={<App />} />
+          <Route index={false} path="/coinDetails/:symbol" element={<DetailView />} />
         </Route>
       </Routes>
     </BrowserRouter>
