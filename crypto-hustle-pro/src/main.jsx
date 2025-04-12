@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import {BrowserRouter, Route, Routes, Link} from 'react-router-dom';
 import './index.css';
 import App from './App.jsx';
 import Layout from '../routes/Layout';
@@ -15,6 +15,17 @@ createRoot(document.getElementById('root')).render(
           <Route index={true} element={<App />} />
           <Route index={false} path="/coinDetails/:symbol" element={<DetailView />} />
         </Route>
+        <Route
+          path="*"
+          element={
+            <main style={{ padding: "1rem" }}>
+              <p>There's nothing here!</p>
+              <Link style={{ color: "black" }} to="/">
+                Back to Home
+              </Link>
+            </main>
+          }
+        />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
